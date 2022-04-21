@@ -1,8 +1,8 @@
 const express$ = require('express');
 const body_parser$ = require('body-parser');
-const { mongoose$ } = require('./db/mongodb.config');
+const { mongoose$ } = require('./server-script/db/mongodb.config');
 const dotenv$ = require('dotenv');
-var employeeController = require('./controllers/employee.controller');
+var employeeController = require('./server-script/controllers/employee.controller');
 const cors$ = require('cors');
 
 
