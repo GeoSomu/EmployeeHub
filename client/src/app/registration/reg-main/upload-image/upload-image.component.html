@@ -1,0 +1,25 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title">Upload Image </ng-template>
+    <ng-template pTemplate="subtitle">
+      Upload Image with PNG or JPEG format
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p-fileUpload name="demo[]" accept="image/*" [maxFileSize]="1000000">
+            <ng-template pTemplate="content">
+
+            </ng-template>
+      </p-fileUpload>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="row ">
+        <div class="col-6 d-flex justify-content-start">
+          <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right" iconPos="right"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title">Preview Details</ng-template>
+    <ng-template pTemplate="subtitle">
+      please preview your details before submit
+    </ng-template>
+    <ng-template pTemplate="content">
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="row ">
+        <div class="col-6 d-flex justify-content-start">
+          <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <button pButton pRipple label="Submit" styleClass="p-button-sm" class="p-button-success p-button-sm" icon="pi pi-upload" iconPos="right"></button>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

@@ -1,0 +1,10 @@
+::ng-deep .p-chips .p-chips-multiple-container {
+  padding: 0.275rem 0.5rem;
+  width: 100%;
+  height: 2.8rem;
+}
+
+::ng-deep .p-chips .p-chips-multiple-container .p-chips-input-token {
+  padding: 0.275rem 0;
+  /* margin: 0; */
+}

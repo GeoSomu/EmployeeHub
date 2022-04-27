@@ -1,0 +1,51 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title"> Present Address </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your present address
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form autocomplete="off">
+        <div class="row flex-wrap">
+          <div class="col-2 mb-4">
+            <input type="text" pInputText placeholder="Flat No" class="p-inputtext-sm" />
+          </div>
+          <div class="col-10 mb-4">
+            <input type="text" pInputText placeholder="Address Line 1" [style]="{'width': '100%'}" class="p-inputtext-sm" />
+          </div>
+          <div class="col-12 mb-4">
+            <input type="text" pInputText placeholder="Address Line 2 (optional)" [style]="{'width': '100%'}" class="p-inputtext-sm" />
+          </div>
+          <div class="col-6 mb-4">
+            <p-dropdown optionLabel="titleName"
+              placeholder="Select District" [style]="{'width': '100%'}"
+              class="p-inputtext-sm" ></p-dropdown>
+          </div>
+          <div class="col-6 mb-4">
+            <p-dropdown optionLabel="titleName"
+              placeholder="Select State" [style]="{'width': '100%'}"
+              class="p-inputtext-sm" ></p-dropdown>
+          </div>
+          <div class="col-6 mb-4">
+            <p-dropdown optionLabel="titleName"
+              placeholder="Select Country" [style]="{'width': '100%'}"
+              class="p-inputtext-sm" ></p-dropdown>
+          </div>
+          <div class="col-6 mb-4">
+            <input type="text" pInputText placeholder="Zip Code" [style]="{'width': '100%'}" class="p-inputtext-sm" />
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="row ">
+        <div class="col-6 d-flex justify-content-start">
+          <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right" iconPos="right"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
