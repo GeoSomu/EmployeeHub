@@ -5,7 +5,7 @@ import { RegistartionService } from 'src/app/shared/services/registartion.servic
 @Component({
   selector: 'app-reg-main',
   templateUrl: './reg-main.component.html',
-  styleUrls: ['./reg-main.component.scss']
+  styleUrls: ['./reg-main.component.scss'],
 })
 export class RegMainComponent implements OnInit {
 

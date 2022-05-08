@@ -8,7 +8,8 @@ import { AddressComponent } from './reg-main/address/address.component';
 import { OrganizationComponent } from './reg-main/organization/organization.component';
 import { UploadImageComponent } from './reg-main/upload-image/upload-image.component';
 import { ConfirmationComponent } from './reg-main/confirmation/confirmation.component';
-import { PrimengModule } from '../shared/modules/primeng/primeng.module';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { PrimengModule } from '../shared/modules/primeng/primeng.module';
   imports: [
     CommonModule,
     RegistrationRoutingModule,
-    PrimengModule
+    SharedModule
   ]
 })
 export class RegistrationModule { }

@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginMainComponent } from './login-main/login-main.component';
-import { PrimengModule } from '../shared/modules/primeng/primeng.module';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,7 @@ import { PrimengModule } from '../shared/modules/primeng/primeng.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    PrimengModule
+    SharedModule
   ]
 })
 export class LoginModule { }

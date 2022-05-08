@@ -8,16 +8,17 @@ export class RegistartionService {
 
   public employeeInformation = {
     personalInformation: {
-      'title': '',
+      'title': {
+        'titleName': ''
+      },
       'firstName': '',
       'lastName': '',
       'personalEmail': '',
       'dateOfBirth': null,
       'gender': '',
-      'age': null,
+      'phoneNumber': null,
       'password': '',
       'confirmPassword': '',
-      'saveDetail': false
     },
     address: {
       'dNo': '',
@@ -26,19 +27,16 @@ export class RegistartionService {
       'city': '',
       'state': '',
       'country': '',
-      'zipCode': null,
-      'saveDetail': false
+      'zipCode': null
     },
     organization: {
       'empId': '',
       'designation': '',
       'organizationName': '',
-      'primarySkills': [],
-      'saveDetail': false
+      'primarySkills': []
     },
     uploadImage: {
-      'empImage': '',
-      'saveDetail': false
+      'empImage': []
     }
   };
 

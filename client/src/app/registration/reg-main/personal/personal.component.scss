@@ -7,6 +7,12 @@ input.ng-invalid.ng-touched {
   width: 100%;
 }
 
+::ng-deep .p-inputgroup {
+  display: flex;
+  align-items: stretch;
+  height: 2.8rem;
+}
+
 ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
   margin: 0;
   padding: 0.5rem 1rem !important;
@@ -47,3 +53,7 @@ input.ng-invalid.ng-touched {
   font-size: medium;
 }
 
+small {
+  font-size: 12px;
+  height: 1rem;
+}

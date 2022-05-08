@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegistartionService } from 'src/app/shared/services/registartion.service';
 
 @Component({
   selector: 'app-organization',
@@ -8,9 +9,12 @@ import { Router } from '@angular/router';
 })
 export class OrganizationComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public organizationInformation: any;
+
+  constructor(private router: Router, private registrationService: RegistartionService) { }
 
   ngOnInit(): void {
+    this.organizationInformation = this.registrationService.getEmployeeInformation().organization;
   }
 
   public previousPage(){

@@ -1,3 +1,7 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { slider } from 'src/app/shared/common/route-animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegistartionService } from 'src/app/shared/services/registartion.service';
@@ -5,18 +9,16 @@ import { RegistartionService } from 'src/app/shared/services/registartion.servic
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.scss']
+  styleUrls: ['./personal.component.scss'],
+  animations: [ slider ]
 })
 export class PersonalComponent implements OnInit {
-
   public titles: any[] = [];
-  password: string = ''
   public personalInformation: any;
-  public submitted = false;
 
-  gender: any = ''
-
-  constructor(private router: Router, private registrationService: RegistartionService) { }
+  constructor(
+    private router: Router,
+    private registrationService: RegistartionService) { }
 
   ngOnInit(): void {
     this.titles = [

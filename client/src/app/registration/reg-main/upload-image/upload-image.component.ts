@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegistartionService } from 'src/app/shared/services/registartion.service';
 
 @Component({
   selector: 'app-upload-image',
@@ -8,9 +9,17 @@ import { Router } from '@angular/router';
 })
 export class UploadImageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public uploadedImage: any;
+  img : any;
+
+  constructor(private router: Router, private registrationService: RegistartionService) { }
 
   ngOnInit(): void {
+    this.uploadedImage = this.registrationService.getEmployeeInformation().uploadImage;
+  }
+
+  public onUpload(event: any){
+    this.uploadedImage.empImage = event.files;
   }
 
   previousPage(){

@@ -19,11 +19,17 @@ const routes: Routes = [
       },
       {
         path: 'personal',
-        component: PersonalComponent
+        component: PersonalComponent,
+        data: {
+          animation: 'isLeft'
+        }
       },
       {
         path: 'address',
-        component: AddressComponent
+        component: AddressComponent,
+        data: {
+          animaton: 'isRight'
+        }
       },
       {
         path: 'organization',
