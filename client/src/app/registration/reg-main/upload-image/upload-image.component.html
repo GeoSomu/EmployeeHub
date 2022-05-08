@@ -5,16 +5,13 @@
       Upload Image with PNG or JPEG format
     </ng-template>
     <ng-template pTemplate="content">
-      <p-fileUpload accept="image/*" name="uploadedImage.empImage" [maxFileSize]="1000000" [customUpload]="true"  (uploadHandler)="onUpload($event)">
+      <p-fileUpload accept="image/*" name="uploadedImage.empImage" [maxFileSize]="1000000" [customUpload]="true"
+        (uploadHandler)="onUpload($event)">
         <ng-template pTemplate="content">
           <ul *ngIf="this.uploadedImage.empImage.length">
             <li *ngFor="let file of this.uploadedImage.empImage">{{ file.name }} - {{ file.size }} bytes</li>
           </ul>
         </ng-template>
-      <p-fileUpload name="demo[]" accept="image/*" [maxFileSize]="1000000">
-            <ng-template pTemplate="content">
-
-            </ng-template>
       </p-fileUpload>
     </ng-template>
     <ng-template pTemplate="footer">
@@ -23,7 +20,8 @@
           <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
         </div>
         <div class="col-6 d-flex justify-content-end">
-          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right" iconPos="right"></p-button>
+          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right"
+            iconPos="right"></p-button>
         </div>
       </div>
     </ng-template>
