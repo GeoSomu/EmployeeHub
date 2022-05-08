@@ -10,7 +10,6 @@ import { RegistartionService } from 'src/app/shared/services/registartion.servic
   styleUrls: ['./confirmation.component.scss']
 })
 export class ConfirmationComponent implements OnInit {
-
   public data: any;
   public uploadedImg: string = '';
 

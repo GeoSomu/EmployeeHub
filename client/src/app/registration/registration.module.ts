@@ -11,6 +11,7 @@ import { ConfirmationComponent } from './reg-main/confirmation/confirmation.comp
 import { SharedModule } from '../shared/shared.module';
 
 
+
 @NgModule({
   declarations: [
     RegMainComponent,

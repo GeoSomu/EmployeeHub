@@ -20,7 +20,6 @@ export class UploadImageComponent implements OnInit {
 
   public onUpload(event: any){
     this.uploadedImage.empImage = event.files;
-
   }
 
   previousPage(){

@@ -11,6 +11,10 @@
             <li *ngFor="let file of this.uploadedImage.empImage">{{ file.name }} - {{ file.size }} bytes</li>
           </ul>
         </ng-template>
+      <p-fileUpload name="demo[]" accept="image/*" [maxFileSize]="1000000">
+            <ng-template pTemplate="content">
+
+            </ng-template>
       </p-fileUpload>
     </ng-template>
     <ng-template pTemplate="footer">

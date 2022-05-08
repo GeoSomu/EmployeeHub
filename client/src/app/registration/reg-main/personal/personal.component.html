@@ -140,6 +140,52 @@
               (cpwd.touched && cpwd.errors?.required) || (cpwd.touched && personalInformation.confirmPassword != personalInformation.password) ? 'visible' : 'invisible' ">
               {{ (cpwd.touched && personalInformation.confirmPassword != personalInformation.password) ? 'Confirm password did not match' : 'Confirm Password is Required' }}
             </small>
+          <div class="col-2 mb-4">
+            <p-dropdown
+              [options]="titles" optionLabel="titleName"
+              placeholder="Select title" [style]="{'width': '100%'}" [required]="true"
+              class="p-inputtext-sm" ></p-dropdown>
+          </div>
+          <div class="col-5 p-inputgroup  mb-4">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" pInputText placeholder="First Name" class="p-inputtext-sm" />
+          </div>
+          <div class="col-5 p-inputgroup  mb-4">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" pInputText placeholder="Last Name" class="p-inputtext-sm" />
+          </div>
+          <div class="col-4 p-inputgroup  mb-4">
+            <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+            <input type="email" pInputText placeholder="Personal Email ID" class="p-inputtext-sm" />
+          </div>
+          <div class="col-4 mb-4">
+            <p-calendar  [showIcon]="true" inputId="icon" placeholder="Date of Birth"></p-calendar>
+          </div>
+          <div class="col-4 p-inputgroup mb-4">
+            <label class="form-label mt-2">Gender :</label>
+            <p-radioButton name="gender" value="male" [(ngModel)]="gender" inputId="male" class="ms-3 me-2"></p-radioButton>
+            <label for="male" class="mt-2">Male</label>
+            <p-radioButton name="gender" value="female" inputId="female" [(ngModel)]="gender" class="ms-3 me-2"></p-radioButton>
+            <label for="female" class="mt-2">Female</label>
+          </div>
+          <div class="col-2 p-inputgroup mb-4" style="height: 2.8rem">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <p-inputNumber mode="decimal" inputId="withoutgrouping" [useGrouping]="false" placeholder="Age" [maxlength]="3"></p-inputNumber>
+          </div>
+          <div class="col-5 p-inputgroup mb-4">
+            <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+            <p-password [toggleMask]="true" [(ngModel)]="password"
+              name="password" [style]="{'width': '100%', 'height': '2.8rem'}"
+              placeholder="Create New Password"
+              ></p-password>
+          </div>
+          <div class="col-5 p-inputgroup mb-4">
+            <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+            <p-password [toggleMask]="true" [feedback]="false"
+              [(ngModel)]="password" name="password"
+              [style]="{'width': '100%', 'height': '2.8rem'}"
+              placeholder="Confirm Password"
+              ></p-password>
           </div>
         </div>
       </form>
@@ -150,6 +196,7 @@
             label="Save & Continue" (onClick)="nextPage()"
             styleClass="p-button-sm" icon="pi pi-angle-right"
             iconPos="right" ></p-button>
+          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right" iconPos="right"></p-button>
       </div>
     </ng-template>
   </p-card>
