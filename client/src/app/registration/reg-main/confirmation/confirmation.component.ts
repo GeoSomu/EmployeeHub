@@ -22,7 +22,6 @@ export class ConfirmationComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = this.registrationService.getEmployeeInformation();
-    console.log(this.data)
     this.uploadedImg = this.data.uploadImage.empImage[0]?.objectURL;
   }
 
