@@ -1,0 +1,48 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title">Organization Information </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your organization Details
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form autocomplete="off">
+        <div class="row flex-wrap">
+          <div class="col-6 mb-4">
+            <input type="text" pInputText placeholder="Employee ID"
+              [style]="{'width': '100%'}" class="p-inputtext-sm"
+              [(ngModel)]="organizationInformation.empId"
+              [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="col-6 mb-4">
+            <input type="text" pInputText placeholder="Designation"
+              [style]="{'width': '100%'}" class="p-inputtext-sm"
+              [(ngModel)]="organizationInformation.designation"
+              [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="col-12 mb-4">
+            <input type="text" pInputText placeholder="Organization Name"
+              [style]="{'width': '100%'}" class="p-inputtext-sm"
+              [(ngModel)]="organizationInformation.organizationName"
+              [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="col-12 mb-4">
+            <p-chips [style]="{'width': '100%'}"
+              placeholder="Enter your Primary Skills and Hit 'Enter' "
+              [(ngModel)]="organizationInformation.primarySkills"
+              [ngModelOptions]="{standalone: true}" ></p-chips>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="row ">
+        <div class="col-6 d-flex justify-content-start">
+          <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right" iconPos="right"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

@@ -1,0 +1,77 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title"> Present Address </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your present address
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form autocomplete="off">
+        <div class="row flex-wrap">
+          <div class="col-2 mb-4">
+            <input type="text"
+              pInputText placeholder="Flat No" class="p-inputtext-sm"
+              [(ngModel)]="addressInformation.dNo"
+              [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="col-10 mb-4">
+            <input type="text" pInputText placeholder="Address Line 1"
+              [style]="{'width': '100%'}" class="p-inputtext-sm"
+              [(ngModel)]="addressInformation.streetName"
+              [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="col-12 mb-4">
+            <input type="text" pInputText placeholder="Address Line 2 (optional)"
+            [style]="{'width': '100%'}" class="p-inputtext-sm"
+            [(ngModel)]="addressInformation.addresslineTwo"
+            [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="col-6 mb-4">
+            <p-dropdown [options]="countrires" optionLabel="name"
+              placeholder="Select Country" [style]="{'width': '100%'}"
+              class="p-inputtext-sm" [showClear]="isSelectedCoutryName" [filter]="true" filterBy="name"
+              (onClick)="onSelectCountryName(addressInformation.country)"
+              (onClear)="isSelectedCoutryName = false"
+              [(ngModel)]="addressInformation.country"
+              [ngModelOptions]="{standalone: true}"></p-dropdown>
+          </div>
+          <div class="col-6 mb-4">
+            <p-dropdown optionLabel="name" [options]="states"
+              placeholder="Select State" [style]="{'width': '100%'}"
+              class="p-inputtext-sm" [showClear]="isSelectedStateName" [filter]="true" filterBy="name"
+              (onClick)="onSelectStateName(addressInformation.state)"
+              (onClear)="isSelectedCoutryName = false"
+              [disabled]="!isSelectedCoutryName"
+              [(ngModel)]="addressInformation.state"
+              [ngModelOptions]="{standalone: true}" ></p-dropdown>
+          </div>
+          <div class="col-6 mb-4">
+            <p-dropdown optionLabel="name" [options]="cities"
+              placeholder="Select City" [style]="{'width': '100%'}"
+              class="p-inputtext-sm" [showClear]="isSelectedCityName" [filter]="true" filterBy="name"
+              [disabled]="!isSelectedStateName"
+              (onClick)="isSelectedCityName = true"
+              (onClear)="isSelectedCityName = false"
+              [(ngModel)]="addressInformation.city"
+              [ngModelOptions]="{standalone: true}" ></p-dropdown>
+          </div>
+          <div class="col-6 mb-4">
+            <input type="text" pInputText placeholder="Zip Code"
+              [style]="{'width': '100%'}" class="p-inputtext-sm"
+              [(ngModel)]="addressInformation.zipCode"
+              [ngModelOptions]="{standalone: true}" />
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="row ">
+        <div class="col-6 d-flex justify-content-start">
+          <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <p-button label="Save & Continue" (onClick)="nextPage()" styleClass="p-button-sm" icon="pi pi-angle-right" iconPos="right"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

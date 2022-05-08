@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: AvenirLTProLight;
+  src: url('./assets/fonts/AvenirLTProLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: AvenirLTProHeavy;
+  src: url('./assets/fonts/AvenirLTProHeavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: AvenirLTProMedium;
+  src: url('./assets/fonts/AvenirLTProMedium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: AvenirLTProRoman;
+  src: url('./assets/fonts/AvenirLTProRoman.otf');
+}
+
+* {
+  font-family: AvenirLTProMedium;
+}
+
+::placeholder {
+  font-family: AvenirLTProLight, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+
+
+
+

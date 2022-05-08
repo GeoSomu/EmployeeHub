@@ -1,0 +1,21 @@
+::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  margin: 0;
+  padding: 0.5rem 1rem !important;
+  border: 0 none;
+  color: hsl(210deg 9% 31%);
+  background: hsl(0deg 0% 0% / 0%);
+  transition: box-shadow 0.2s;
+  border-radius: 0;
+  font-size: small !important;
+  font-family: AvenirLTProMedium !important;
+}
+
+::ng-deep .p-inputgroup-addon:last-child,
+.p-inputgroup button:last-child,
+.p-inputgroup input:last-child,
+.p-inputgroup > .p-inputwrapper:last-child > .p-component,
+.p-inputgroup > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  font-size: medium;
+}

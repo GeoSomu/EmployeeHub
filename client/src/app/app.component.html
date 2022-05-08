@@ -1,0 +1,84 @@
+<div class="container-fluid d-none d-lg-block d-xl-block d-xxl-block">
+  <div class="row">
+    <div class="col-2 sideNav">
+      <img src="../../../assets/images/logo.png" alt="" class="img-fluid p-3 pt-5">
+
+      <div class="px-2 my-4">
+        <ul>
+          <ul>
+            <li  [routerLink]="['/login']">
+              <span>
+                <i class="pi pi-sign-in me-2" routerLinkActive="active"></i>
+                <a style="letter-spacing: 1.5px;"
+                routerLinkActive="active">Login</a>
+              </span>
+            </li>
+            <li [routerLink]="['/registration']">
+              <span>
+                <i class="pi pi-user-plus me-2" routerLinkActive="active"></i>
+                <a style="letter-spacing: 1.5px;"
+                routerLinkActive="active">Registration</a>
+              </span>
+            </li>
+            <li [routerLink]="['/admin']">
+              <span>
+                <i class="pi pi-user me-2" routerLinkActive="active"></i>
+                <a style="letter-spacing: 1.5px;"
+                routerLinkActive="active">Administrator</a>
+              </span>
+            </li>
+          </ul>
+        </ul>
+      </div>
+
+      <div class="my-5">
+        <!-- <div class="row flex-wrap">
+          <div class="col-6 my-3 p-3 d-flex justify-content-center">
+            <button
+              pButton pRipple
+              pTooltip="GitHub"
+              tooltipPosition="bottom"
+              type="button" icon="pi pi-github fs-3"
+              class="p-button-rounded p-button-text" [style]="{'color': 'white'}"></button>
+          </div>
+          <div class="col-6 my-3 p-3 d-flex justify-content-center">
+            <button
+              pButton pRipple
+              pTooltip="FaceBook"
+              tooltipPosition="bottom"
+              type="button" icon="pi pi-facebook fs-3"
+              class="p-button-rounded p-button-text" [style]="{'color': 'white'}"></button>
+          </div>
+          <div class="col-6 my-3 p-3 d-flex justify-content-center">
+            <button
+              pButton pRipple
+              pTooltip="LinkedIn"
+              tooltipPosition="bottom"
+              type="button" icon="pi pi-linkedin fs-3"
+              class="p-button-rounded p-button-text" [style]="{'color': 'white'}"></button>
+          </div>
+          <div class="col-6 my-3 p-3 d-flex justify-content-center">
+            <button
+              pButton pRipple
+              pTooltip="Twitter"
+              tooltipPosition="bottom"
+              type="button" icon="pi pi-twitter fs-3"
+              class="p-button-rounded p-button-text" [style]="{'color': 'white'}"></button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="col-10 overflow-auto p-0">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid d-block d-lg-none d-xl-none d-xxl-none" style="background-color: #f6f6f6;">
+  <div class="vh-100 d-flex flex-column align-items-center justify-content-center">
+    <img src="../../../assets/images/danger.png" alt="" class="img-fluid" width="150" height="150">
+    <h4 class="my-4 fw-bold">Device Unsupported !!!</h4>
+    <p>Sorry, this page only support for large devics</p>
+    <p>please, open in your desktop.</p>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title">Preview Details</ng-template>
+    <ng-template pTemplate="subtitle">
+      please preview your details before submit
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="w-100">
+        <div class="row">
+          <div class="col-8">
+            <div class="d-flex">
+              <h3 class="fw-bold">{{ data.personalInformation?.title?.titleName + ". " + data.personalInformation?.firstName + " " + data.personalInformation?.lastName }}</h3>
+              <p class="m-2">( {{ data.organization?.empId }} )</p>
+            </div>
+            <small>
+              <span class="fst-italic">{{ data.organization?.designation }}</span>
+              <span class="mx-2">at</span>
+              <span class="fw-bold"> {{ data.organization?.organizationName }}</span>
+            </small>
+            <p class="m-0 mb-1 text-primary text-decoration-underline">{{ data.personalInformation?.personalEmail }}</p>
+            <small>{{ data.personalInformation?.phoneNumber }} - {{ data.personalInformation?.dateOfBirth | date: 'MMM d, y' }}</small>
+            <div class="d-flex flex-wrap mt-2">
+              <p>Primary Skills : </p>
+              <div *ngFor="let skill of data.organization?.primarySkills" class="ms-3" >
+                <p-badge [value]="skill"></p-badge>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 p-3">
+            <img [src]="uploadedImg" class="img-fluid img-thumbnail" width="150" height="150" alt="">
+          </div>
+        </div>
+        <hr class="me-5">
+        <div class="row">
+          <div class="col-12">
+            <h6 class="fw-bold">Present Address</h6>
+            <small>
+              <em>{{ data.address?.dNo + ', '}}</em>
+              <span>
+                {{ data.address?.streetName }}
+              </span>
+            </small>
+            <small *ngIf="data.address?.addresslineTwo">
+              {{ data.address?.addresslineTwo }}
+            </small>
+            <p class="m-1">
+              {{ data.address?.city?.name + ' - ' }}
+              <em>{{ data.address?.zipCode }}</em>
+            </p>
+            <p class="m-1">
+              <span>{{ data.address?.state?.name + ' - ' + data.address?.country?.name + '.'}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="row ">
+        <div class="col-6 d-flex justify-content-start">
+          <p-button label="Back" (onClick)="previousPage()" icon="pi pi-angle-left" styleClass="p-button-sm"></p-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <button pButton pRipple
+            label="Submit" styleClass="p-button-sm"
+            class="p-button-success p-button-sm"
+            icon="pi pi-upload" iconPos="right"
+            (click)="onSubmit()"></button>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
+<p-toast></p-toast>
