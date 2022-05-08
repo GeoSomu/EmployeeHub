@@ -1,6 +1,3 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { slider } from 'src/app/shared/common/route-animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

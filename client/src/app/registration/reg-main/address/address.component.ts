@@ -6,8 +6,6 @@ import { UrlContants } from 'src/app/shared/common/url.contant';
 import { Cities, Countries } from 'src/app/shared/models/csc.model';
 import { HttpService } from 'src/app/shared/services/http.service';
 import { RegistartionService } from 'src/app/shared/services/registartion.service';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-address',
@@ -54,7 +52,7 @@ export class AddressComponent implements OnInit, OnDestroy {
     this.countryIso2 = countryISO2;
   }
 
-  public onSelectStateName(value: any){
+  public onSelectStateName(value: any) {
     this.isSelectedStateName = true;
     const stateISO2 = value?.iso2;
     const cityByStateNameActionUrl = this.urlConstant.getAllCountries + this.countryIso2 + "/states/" + stateISO2 + "/cities";
@@ -62,12 +60,6 @@ export class AddressComponent implements OnInit, OnDestroy {
       .subscribe((res: any) => {
         this.cities = res;
       })
-})
-export class AddressComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
   }
 
   public previousPage(){
