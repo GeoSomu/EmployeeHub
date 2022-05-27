@@ -1,0 +1,156 @@
+<div>
+  <p-card>
+    <ng-template pTemplate="title"> Personal Information </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your personal information
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form autocomplete="off">
+        <div class="row flex-wrap">
+          <div class="col-2">
+            <p-dropdown
+              [options]="titles" optionLabel="titleName"
+              placeholder="Select title"
+              [style]="{'width': '100%'}"
+              [autoDisplayFirst]="false" inputId="dropdown"
+              class="p-inputtext-sm"
+              [(ngModel)]="personalInformation.title"
+              [required]="true"
+              #title="ngModel"
+              [ngModelOptions]="{standalone: true}"
+              [ngClass]="{'ng-invalid ng-dirty': title.touched && title.errors?.required }"></p-dropdown>
+              <small class="text-danger"
+              [ngClass]="title.touched && title.errors?.required ? 'visible' : 'invisible' ">Title is required.</small>
+          </div>
+          <div class="col-5">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText placeholder="First Name"
+                class="p-inputtext-sm" [(ngModel)]="personalInformation.firstName" #firstName="ngModel"
+                [ngModelOptions]="{standalone: true}" required
+                [ngClass]="{'ng-invalid ng-dirty': firstName.touched && firstName.errors?.required }" />
+            </div>
+            <small class="text-danger"
+              [ngClass]="firstName.touched && firstName.errors?.required ? 'visible' : 'invisible' ">First Name is required.</small>
+          </div>
+          <div class="col-5">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText placeholder="Last Name"
+                class="p-inputtext-sm" [(ngModel)]="personalInformation.lastName"
+                [ngModelOptions]="{standalone: true}"
+                #lastName="ngModel" required
+                [ngClass]="{'ng-invalid ng-dirty': lastName.touched && lastName.errors?.required }" />
+            </div>
+            <small class="text-danger"
+            [ngClass]="lastName.touched && lastName.errors?.required ? 'visible' : 'invisible' ">Last Name is Required.</small>
+          </div>
+          <div class="col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+              <input type="email" pInputText placeholder="Personal Email ID"
+                class="p-inputtext-sm" [(ngModel)]="personalInformation.personalEmail"
+                [ngModelOptions]="{standalone: true}"
+                #personalEmail="ngModel" required email
+                [ngClass]="{'ng-invalid ng-dirty': (personalEmail.touched && personalEmail.errors?.required) ||
+                (personalEmail.touched && personalEmail.errors?.email) }" />
+            </div>
+            <small class="text-danger"
+              [ngClass]="(personalEmail.touched && personalEmail.errors?.required) ||
+              (personalEmail.touched && personalEmail.errors?.email) ? 'visible' : 'invisible' ">
+              {{ personalEmail.touched && personalEmail.errors?.email ? 'Invalid Email Format.' : 'Email ID is Required.'}}
+            </small>
+          </div>
+          <div class="col-4">
+            <p-calendar
+              [showIcon]="true" inputId="icon"
+              placeholder="Date of Birth" [(ngModel)]="personalInformation.dateOfBirth"
+              [ngModelOptions]="{standalone: true}"
+              [required]="true" #dob="ngModel"
+              [ngClass]="{'ng-invalid ng-dirty': dob.touched && dob.errors?.required }" ></p-calendar>
+              <small class="text-danger"
+              [ngClass]="dob.touched && dob.errors?.required ? 'visible' : 'invisible' ">Date of Birth is Required.</small>
+          </div>
+          <div class="col-4 p-inputgroup mb-4">
+            <label class="form-label mt-2">Gender :</label>
+            <p-radioButton name="gender" value="male" inputId="male" class="ms-3 me-2" [(ngModel)]="personalInformation.gender" [ngModelOptions]="{standalone: true}" ></p-radioButton>
+            <label for="male" class="mt-2">Male</label>
+            <p-radioButton name="gender" value="female" inputId="female" class="ms-3 me-2" [(ngModel)]="personalInformation.gender" [ngModelOptions]="{standalone: true}" ></p-radioButton>
+            <label for="female" class="mt-2">Female</label>
+          </div>
+          <div class="col-4" style="height: 2.8rem">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <p-inputNumber mode="decimal"
+                inputId="withoutgrouping"
+                [useGrouping]="false" placeholder="Phone Number"
+                [maxlength]="10" [(ngModel)]="personalInformation.phoneNumber"
+                [ngModelOptions]="{standalone: true}"
+                #phone="ngModel" [required]="true"
+                [ngClass]="{'ng-invalid ng-dirty': phone.touched && phone.errors?.required }"></p-inputNumber>
+            </div>
+            <small class="text-danger"
+              [ngClass]="(phone.touched && phone.errors?.required)  ? 'visible' : 'invisible' ">PhoneNumber is Required</small>
+          </div>
+          <div class="col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <p-password [toggleMask]="true" [style]="{'width': '100%', 'height': '2.8rem'}"
+                placeholder="Create New Password"
+                [(ngModel)]="personalInformation.password"
+                #password="ngModel"
+                [ngModelOptions]="{standalone: true}"
+                required
+                [ngClass]="{'ng-dirty ng-invalid': (password.touched && password.errors?.required) }"
+              >
+                <ng-template pTemplate="header">
+                  <h6>Pick a password</h6>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                  <p-divider></p-divider>
+                  <p class="mt-2">Suggestions</p>
+                  <ul class="" style="line-height: 1.5">
+                    <li>At least one lowercase</li>
+                    <li>At least one uppercase</li>
+                    <li>At least one numeric</li>
+                    <li>Minimum 8 characters</li>
+                  </ul>
+                </ng-template>
+              </p-password>
+            </div>
+            <small class="text-danger"
+            [ngClass]="password.touched && password.errors?.required ? 'visible' : 'invisible' ">Password is Required.</small>
+          </div>
+          <div class="col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <p-password [toggleMask]="true" [feedback]="false"
+                name="password"
+                [style]="{'width': '100%', 'height': '2.8rem'}"
+                placeholder="Confirm Password"
+                [(ngModel)]="personalInformation.confirmPassword"
+                [ngModelOptions]="{standalone: true}"
+                #cpwd="ngModel" required
+                [ngClass]="{'ng-invalid ng-dirty': (cpwd.touched && cpwd.errors?.required) ||
+                  (cpwd.touched && personalInformation.confirmPassword != personalInformation.password )}"
+              ></p-password>
+            </div>
+            <small class="text-danger"
+            [ngClass]="
+              (cpwd.touched && cpwd.errors?.required) || (cpwd.touched && personalInformation.confirmPassword != personalInformation.password) ? 'visible' : 'invisible' ">
+              {{ (cpwd.touched && personalInformation.confirmPassword != personalInformation.password) ? 'Confirm password did not match' : 'Confirm Password is Required' }}
+            </small>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="d-flex justify-content-end">
+          <p-button
+            label="Save & Continue" (onClick)="nextPage()"
+            styleClass="p-button-sm" icon="pi pi-angle-right"
+            iconPos="right" ></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
