@@ -34,9 +34,9 @@ __app__.use(cors$({
 }));
 
 // Serve only the static files form the dist directory
-__app__.use(express$.static('./dist/ehubzone'));
+__app__.use(express$.static('./dist/EmployeeHub'));
 __app__.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/ehubzone/'}),
+    res.sendFile('index.html', {root: 'dist/EmployeeHub/'}),
 );
 
 __app__.listen(_port, async() => {
